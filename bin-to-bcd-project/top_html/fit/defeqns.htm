@@ -1,0 +1,192 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_27 <= ((ibinh(1) AND ibinh(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(1) AND NOT ibinh(3)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_29 <= ((ibinh(2) AND ibinh(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(2) AND NOT ibinh(4)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_57 <= ((ibinh(6) AND N_PZ_29 AND ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(2) AND NOT N_PZ_29 AND ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT ibinh(5) AND N_PZ_29 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(5) AND NOT ibinh(2) AND NOT N_PZ_29 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(5) AND NOT N_PZ_29 AND ibinh(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ibinh(7)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_67 <= ((NOT ibinh(6) AND NOT ibinh(3) AND NOT N_PZ_29 AND NOT N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(5) AND NOT ibinh(3) AND N_PZ_29 AND NOT ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(5) AND NOT ibinh(3) AND NOT N_PZ_57 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(5) AND NOT ibinh(2) AND NOT ibinh(3) AND NOT N_PZ_57 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ibinh(7)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+b0/bcd1(0)1 <= ((NOT N_PZ_27 AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND N_PZ_27 AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(6) AND N_PZ_27 AND ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(6) AND NOT N_PZ_29 AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(5) AND N_PZ_57 AND NOT ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND N_PZ_27 AND N_PZ_29 AND ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND N_PZ_29 AND N_PZ_57 AND NOT ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(6) AND NOT N_PZ_27 AND ibinh(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(6) AND ibinh(5) AND ibinh(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_27 AND NOT N_PZ_29));
+</td></tr><tr><td>
+LDCP_bcd00: LDCP port map (bcd0(0),ibin(0),,'0','0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bcd0_G(0) <= (en AND NOT nen);
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd0(1) <= ((ibinh(1) AND NOT b0/bcd1(0)1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT b0/bcd1(0)1 AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT b0/bcd1(0)1 AND ibinh(3) AND N_PZ_57));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd0(2) <= ((ibinh(6) AND N_PZ_27 AND N_PZ_29 AND NOT ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND NOT ibinh(3) AND N_PZ_29 AND NOT N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT N_PZ_27 AND N_PZ_29 AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(5) AND N_PZ_27 AND N_PZ_29 AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(6) AND NOT ibinh(5) AND NOT N_PZ_27 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_29)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(1) AND NOT ibinh(6) AND ibinh(5) AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(5) AND NOT N_PZ_27 AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(5) AND N_PZ_29 AND NOT N_PZ_57 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND NOT N_PZ_27 AND ibinh(3) AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(5) AND ibinh(2) AND N_PZ_27 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_29)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT ibinh(5) AND N_PZ_27 AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT ibinh(5) AND NOT ibinh(3) AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND N_PZ_27 AND NOT N_PZ_29 AND ibinh(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT N_PZ_27 AND ibinh(3) AND N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND NOT ibinh(6) AND ibinh(2) AND NOT N_PZ_27 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_29 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(2) AND N_PZ_27 AND NOT ibinh(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_57 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(2) AND NOT N_PZ_27 AND ibinh(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_29 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT ibinh(2) AND NOT N_PZ_27 AND ibinh(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_29 AND NOT ibinh(7)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd0(3) <= ((ibinh(1) AND ibinh(5) AND ibinh(7).COMB AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND N_PZ_27 AND NOT N_PZ_29 AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND N_PZ_27 AND N_PZ_29 AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_27 AND N_PZ_57 AND NOT ibinh(7) AND NOT ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(1) AND ibinh(6) AND ibinh(2) AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(5) AND NOT N_PZ_27 AND N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND NOT N_PZ_27 AND ibinh(3) AND NOT N_PZ_57 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT N_PZ_27 AND NOT N_PZ_29 AND NOT ibinh(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT N_PZ_27 AND ibinh(3) AND N_PZ_29 AND NOT N_PZ_57 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(1) AND ibinh(6) AND ibinh(5) AND ibinh(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_27 AND NOT N_PZ_29 AND NOT ibinh(7).COMB));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd1(0) <= ((b0/bcd1(0)1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(1) AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(1) AND ibinh(3) AND N_PZ_57));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd1(1) <= ((ibinh(6) AND NOT ibinh(4) AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT ibinh(4) AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(7) AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(5) AND NOT ibinh(4) AND N_PZ_57)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND NOT ibinh(2) AND N_PZ_29 AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(4) AND NOT N_PZ_57 AND NOT ibinh(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(5) AND ibinh(4) AND NOT N_PZ_57 AND NOT ibinh(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(5) AND ibinh(2) AND N_PZ_29 AND NOT N_PZ_57 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_67));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd1(2) <= ((NOT ibinh(6) AND ibinh(4) AND NOT ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(5) AND ibinh(4) AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND NOT ibinh(5) AND NOT ibinh(4) AND NOT ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(5) AND ibinh(3) AND NOT ibinh(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(5) AND NOT ibinh(4) AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(3) AND NOT N_PZ_29 AND NOT ibinh(7).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(5) AND NOT ibinh(3) AND NOT N_PZ_29 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ibinh(7)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd1(3) <= ((ibinh(6) AND NOT ibinh(4) AND N_PZ_67)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND NOT ibinh(5) AND ibinh(4) AND NOT ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(6) AND ibinh(4) AND NOT N_PZ_57 AND ibinh(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_67));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd2(0) <= (ibinh(6) AND ibinh(5) AND NOT ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((NOT ibinh(6) AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(5) AND NOT ibinh(3) AND NOT ibinh(4) AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ibinh(6) AND ibinh(5) AND NOT ibinh(2) AND NOT ibinh(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ibinh(4) AND NOT ibinh(7)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+bcd2(1) <= (ibinh(6) AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR (ibinh(6) AND NOT ibinh(5) AND NOT ibinh(3) AND NOT ibinh(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ibinh(7));
+</td></tr><tr><td>
+</td></tr><tr><td>
+gnd_I <= '0';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gnd <= gnd_I when gnd_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gnd_OE <= '0';
+</td></tr><tr><td>
+FDCPE_ibinh1: FDCPE port map (ibinh(1),ibin(1),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(1) <= (en AND NOT nen);
+</td></tr><tr><td>
+FDCPE_ibinh2: FDCPE port map (ibinh(2),ibin(2),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(2) <= (en AND NOT nen);
+</td></tr><tr><td>
+FDCPE_ibinh3: FDCPE port map (ibinh(3),ibin(3),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(3) <= (en AND NOT nen);
+</td></tr><tr><td>
+FDCPE_ibinh4: FDCPE port map (ibinh(4),ibin(4),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(4) <= (en AND NOT nen);
+</td></tr><tr><td>
+FDCPE_ibinh5: FDCPE port map (ibinh(5),ibin(5),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(5) <= (en AND NOT nen);
+</td></tr><tr><td>
+FDCPE_ibinh6: FDCPE port map (ibinh(6),ibin(6),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(6) <= (en AND NOT nen);
+</td></tr><tr><td>
+LDCP_ibinh7.COMB: LDCP port map (ibinh(7).COMB,ibinh_D(7).COMB);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_D(7).COMB <= ((ibinh(5) AND ibinh(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ibinh(5) AND NOT ibinh(7)));FDCPE_ibinh7: FDCPE port map (ibinh(7),ibin(7),,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ibinh_G(7) <= (en AND NOT nen);
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

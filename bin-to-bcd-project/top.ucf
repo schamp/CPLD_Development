@@ -1,0 +1,33 @@
+# Updates Copyright (C) 2011 Andrew Schamp (schamp@gmail.com)
+# removed 7-segment display drivers and exposed BCD output directly
+
+# Original:
+# Copyright (C) 2008 DJ Delorie <dj@delorie.com>
+# Distributed under the terms of the GNU General Public License,
+# either verion 2 or (at your choice) any later version.
+
+NET "en"       LOC = "P18"  ; 
+NET "nen"      LOC = "P19"  ;
+
+NET "ibin<0>"  LOC = "P16"  ; 
+NET "ibin<1>"  LOC = "P14"  ; 
+NET "ibin<2>"  LOC = "P13"  ; 
+NET "ibin<3>"  LOC = "P12"  ; 
+NET "ibin<4>"  LOC = "P8"  ; 
+NET "ibin<5>"  LOC = "P6"  ; 
+NET "ibin<6>"  LOC = "P5"  ; 
+NET "ibin<7>"  LOC = "P3"  ; 
+
+// make sure this is set to hi-z
+NET "gnd"      LOC = "P2";
+ 
+NET "bcd2<1>"  LOC = "P44"; // don't care a whole lot, I'm not using it at the moment
+NET "bcd2<0>"  LOC = "P1";  // don't care a whole lot, I'm not using it at the moment
+NET "bcd1<3>"  LOC = "P43";
+NET "bcd1<2>"  LOC = "P42";
+NET "bcd1<1>"  LOC = "P41";
+NET "bcd1<0>"  LOC = "P40";
+NET "bcd0<3>"  LOC = "P33";
+NET "bcd0<2>"  LOC = "P34";
+NET "bcd0<1>"  LOC = "P36";
+NET "bcd0<0>"  LOC = "P37";
